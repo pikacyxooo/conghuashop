@@ -58,7 +58,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <ScrollPane layoutY="115.0" maxHeight="518.0" maxWidth="1266.0" prefHeight="518.0" prefWidth="1266.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+      <ScrollPane layoutY="115.0" maxHeight="518.0" maxWidth="1266.0" prefHeight="518.0" prefWidth="1266.0" style="-fx-background-color: #fff;" vvalue="0.11" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3550.0" prefWidth="1366.0" style="-fx-background-color: #fff;">
                <children>
@@ -170,7 +170,7 @@
                               <Font name="Microsoft YaHei" size="16.0" />
                            </font>
                         </Button>
-                        <Button layoutX="797.0" layoutY="417.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="145.0" styleClass="productPurchaseBtn" text="立即购买">
+                        <Button layoutX="797.0" layoutY="417.0" mnemonicParsing="false" onAction="#showSuccessDialog" prefHeight="48.0" prefWidth="145.0" styleClass="productPurchaseBtn" text="立即购买">
                            <font>
                               <Font name="Microsoft YaHei" size="16.0" />
                            </font>
@@ -316,7 +316,7 @@
                   </AnchorPane>
                   <AnchorPane layoutX="10.0" layoutY="3203.0" prefHeight="120.0" prefWidth="1366.0" style="-fx-background-color: #fff;" styleClass="indexBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <ImageView fitHeight="120.0" fitWidth="1291.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <ImageView fitHeight="120.0" fitWidth="1291.0" layoutX="112.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="112.0" AnchorPane.rightAnchor="149.8209228515625">
                            <image>
                               <Image url="@../../indexImg/indexBottom.PNG" />
                            </image>

@@ -113,7 +113,7 @@
                         <Insets left="50.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <Button fx:id="signUpBtn" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="signInBtn" text="注册" textFill="#fbfff3" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="signUpBtn" mnemonicParsing="false" onAction="#handleSignUpBtn" prefHeight="40.0" prefWidth="200.0" styleClass="signInBtn" text="注册" textFill="#fbfff3" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="Microsoft JhengHei" size="18.0" />
                      </font>

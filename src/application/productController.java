@@ -7,12 +7,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.Data;
 import model.Product;
 
@@ -36,6 +39,25 @@ public class productController {
 	private Text productDetailDesc; // 商品详情
 	@FXML 
 	private ImageView prdImage;  //商品图片地址
+	
+	@FXML
+	protected void showSuccessDialog(ActionEvent event){
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("SuccessDialog.fxml"));
+			System.out.println("加载了");
+			AnchorPane DialogLayout = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("购买成功");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+		    dialogStage.initOwner(Main.stage);
+		    Scene scene = new Scene(DialogLayout);
+		    dialogStage.setScene(scene);
+		    dialogStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
  
 	@FXML
 	protected void handlePlus(ActionEvent event) {
@@ -60,8 +82,8 @@ public class productController {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("Cart.fxml"));
-			AnchorPane signUpLayout = (AnchorPane) loader.load();
-			Main.rootLayout.setCenter(signUpLayout);
+			AnchorPane cartLayout = (AnchorPane) loader.load();
+			Main.rootLayout.setCenter(cartLayout);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -70,7 +92,6 @@ public class productController {
 	//
 	public void showApparent() {
 		if (product != null) {
-			System.out.println("执行了showApparent");
 			productTitle.setText(product.getName());
 			productDesc.setText(product.getDetail());
 			price.setText("￥"+Double.toString(product.getNormalprice()));
@@ -80,7 +101,6 @@ public class productController {
 			productDetailDesc.setText(product.getDescription());
 			String path = System.getProperty("user.dir");  //获取项目绝对路径
 			File file = new File(path+product.getPrdImage());
-			System.out.println(path+product.getPrdImage());
 			String imgUrl;	
 			try {
 				imgUrl = file.toURI().toURL().toString();
@@ -98,7 +118,6 @@ public class productController {
 	//当运行product页面时的初始化代码
 	@FXML
 	private void initialize() {
-		System.out.println("执行了初始化方法");
 		product = Data.execute();
 		showApparent();
 		// productTitle.setText(Data.pro.getName());

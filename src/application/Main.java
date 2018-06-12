@@ -18,7 +18,7 @@ import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
-	private static Stage stage;
+	public static Stage stage;
 	public static BorderPane rootLayout;
 	private ObservableList<Product> productData = FXCollections.observableArrayList();
 	

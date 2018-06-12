@@ -19,34 +19,34 @@ public class signUpController {
 	@FXML private TextField passwordField;  // ‰»Î√‹¬ÎŒƒ±æ”Ú
 	
 	
-//	@FXML public void handleSignUpBtn(ActionEvent event){
-//		 String account = signUpField.getText();
-//		 String password = passwordField.getText();
-//		 System.out.println("◊¢≤· ß∞‹"+account+password);
-//		 try {
-//			boolean isRegist = ModelFactory.SignUp(account, password);
-//			
-//			if(isRegist){
-//				FXMLLoader loader = new FXMLLoader();
-//				loader.setLocation(getClass().getResource("SignIn.fxml"));
-//				AnchorPane indexLayout = (AnchorPane)loader.load();
-//				Main.rootLayout.setCenter(indexLayout);
-//				
-//			}else{
-//				System.out.println("◊¢≤· ß∞‹");
-//			}
-//	
-//			
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}catch(Exception e) {
-//			e.getStackTrace();
-//		}
-//		 
-//		
-//	}
+	@FXML public void handleSignUpBtn(ActionEvent event){
+		 String account = signUpField.getText();
+		 String password = passwordField.getText();
+		 System.out.println("’À∫≈£∫"+account+" √‹¬Î:"+password);
+		 try {
+			boolean isRegist = ModelFactory.SignUp(account, password);
+			
+			if(isRegist){
+				System.out.println("àÃ––µΩﬂ@“ª≤Ω");
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(getClass().getResource("index.fxml"));
+				AnchorPane indexLayout = (AnchorPane)loader.load();
+				Main.rootLayout.setCenter(indexLayout);
+			}else{
+				System.out.println("◊¢≤· ß∞‹");
+			}
+	
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch(Exception e) {
+			e.getStackTrace();
+		}
+		 
+		
+	}
 }

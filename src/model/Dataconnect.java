@@ -6,7 +6,7 @@ public class Dataconnect {
 	private static Statement stat;
 	private static void init() throws ClassNotFoundException, SQLException{
 		Class.forName("com.mysql.jdbc.Driver");
-		String url="jdbc:mysql://127.0.0.1:3308/Mysql?"+
+		String url="jdbc:mysql://127.0.0.1:3306/Mysql?"+
 					"user=root&password=123456";
 		Connection con=DriverManager.getConnection(url);
 		stat=con.createStatement();
